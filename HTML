@@ -1,0 +1,28 @@
+<div class="outer">
+    <!-- This div is important! It lets us specify margin-left later on. -->
+    <div>
+        <div class="loop"><div class="content"> 25 + years’ experience in Teeth Whitening &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ✦ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cash on delivery only in UAE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ✦ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Whiten Your teeth From The comfort of your home &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ✦ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div></div>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.outer').forEach(el => {
+	let content = el.querySelector('.content');
+
+	repeatContent(content, el.offsetWidth);
+
+	let slider = el.querySelector('.loop');
+	slider.innerHTML = slider.innerHTML + slider.innerHTML;
+});
+
+    
+function repeatContent(el, till) {
+    let html = el.innerHTML;
+    let counter = 0; // prevents infinite loop
+    
+    while (el.offsetWidth < till && counter < 100) {
+        el.innerHTML += html;
+        counter += 1;
+    }
+}
+</script>

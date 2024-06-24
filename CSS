@@ -1,0 +1,44 @@
+/* Using em for your padding-left is going to ensure the padding scales in proportion to the font-size. */
+
+.content {
+    font-family: "Tilda sans",;
+    font-size: 1rem;
+    font-weight: 520;
+    color: #FFFFFF;
+    padding-left: 0.25em;
+}
+
+@media only screen and (max-width: 767px) {
+    .content {
+        font-size: 0.8rem !important;
+        padding-left: 0.25em;
+    }
+}
+
+.outer {
+    overflow: hidden;  !important;
+}
+
+.outer div {
+    display: inline-block;
+}
+
+.loop {
+    white-space: nowrap;
+    animation: loop-anim 20s linear infinite;
+}
+
+@media only screen and (max-width: 767px) {
+    .loop {
+        animation: loop-anim 17s linear infinite;
+    }
+}
+
+@keyframes loop-anim {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: -50% /* This works because of the div between "outer" and "loop" */
+    }
+}
